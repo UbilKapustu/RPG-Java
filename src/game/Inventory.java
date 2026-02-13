@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class Inventory {
     ArrayList<Weapons> weapons;
-    ArrayList<String> armory;
-    ArrayList<String> potions;
+    ArrayList<Armor> armory;
+    ArrayList<Potion> potions;
     public Inventory(){
         weapons = new ArrayList<>();
         armory = new ArrayList<>();
@@ -15,7 +15,11 @@ public void showInv(){
     for( Weapons w : weapons){
         w.showWeapon();
     }
-    System.out.println("Броня: "+ weapons);
-    System.out.println("Зелья: "+ weapons);
+    System.out.println("Броня: ");
+    for( Armor a : armory){
+        a.showArmor();
+    }
+    System.out.println("Зелья: ");
+
 }
 }
