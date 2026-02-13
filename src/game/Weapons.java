@@ -19,6 +19,7 @@ public class Weapons {
     public static Weapons startbow= new Weapons("Тренировочный лук",16,0,1,"лук");
     public static Weapons startstaff= new Weapons("Посох прадеда",20,3,0,"жезл");
     public void showWeapon(){
-        System.out.println(name + " Тип: "+ type+ "; атака: "+ attack_add +"; потеря стамины: "+ stamina_loss+"; потеря маны: "+ mana_loss+";" );
+        System.out.println(name);
+        System.out.println("Тип: "+ type+ "| атака: "+ attack_add +"| потеря стамины: "+ stamina_loss+"| потеря маны: "+ mana_loss+" " );
     }
 }
