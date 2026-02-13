@@ -1,7 +1,7 @@
 package game;
 
 public class Player {
-    String name;
+    String namep;
     String charClass;
     int health;
     int attack;
@@ -9,11 +9,11 @@ public class Player {
     int mana;
     int stamina;
     Inventory inventory;
-    public Player(String name, String charClass){
-        this.name=name;
-        this.charClass=charClass;
+    public Player(String namep, String charClass){
+        this.namep=namep.trim();
+        this.charClass=charClass.trim();
         this.inventory= new Inventory();
-        switch(charClass){
+        switch(this.charClass){
             case "Батыр":
                 health=150;
                 attack=15;
@@ -38,6 +38,8 @@ public class Player {
                 mana=8;
                 inventory.weapons.add(Weapons.startbow);
                 break;
+                default:
+        System.out.println("Такого класса нет!");
         }
     
     }
