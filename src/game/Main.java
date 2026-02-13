@@ -36,10 +36,10 @@ public class Main {
         System.out.println("Ваш Персонаж: " );
         System.out.println("Имя: "+ player.namep);
         System.out.println("Класс: "+ player.charClass);
-        System.out.println("Здоровье: "+player.health);
+        System.out.println("Здоровье: "+player.max_health);
         System.out.println("Защита: "+player.defense);
-        System.out.println("Выносливость: "+ player.stamina);
-        System.out.println("Мана: "+player.mana);
+        System.out.println("Выносливость: "+ player.max_stamina);
+        System.out.println("Мана: "+player.max_mana);
         System.out.println("\nИнвентарь");
         player.inventory.showInv();
     }

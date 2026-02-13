@@ -5,10 +5,13 @@ import java.util.Scanner;
 public class Player {
     String namep;
     String charClass;
+    int max_health;
     int health;
     int attack;
     int defense;
+    int max_mana;
     int mana;
+    int max_stamina;
     int stamina;
     Inventory inventory;
     public Weapons eqpdWeapons;
@@ -32,33 +35,42 @@ public class Player {
         this.inventory= new Inventory();
         switch(this.charClass){
             case "Батыр":
-                health=150;
+                max_health=150;
+                health=max_health;
                 attack=15;
                 defense=10;
-                stamina= 12;
-                mana=0;
+                max_stamina = 12;
+                stamina=max_stamina;
+                max_mana=0;
+                mana=max_mana;
                 inventory.weapons.add(Weapons.startsaber);
                 inventory.armory.add(Armor.startbatyr);
                 inventory.potions.add(new HealthPotion(2));
                 inventory.potions.add(new StaminaPotion(1));
                 break;
             case "Шаман":
-                health = 75;
+                max_health = 75;
+                health=max_health;
                 attack= 20;
                 defense = 5;
-                stamina=2;
-                mana=12;
+                max_stamina =2;
+                stamina=max_stamina;
+                max_mana=12;
+                mana=max_mana;
                 inventory.weapons.add(Weapons.startstaff);
                 inventory.armory.add(Armor.startshaman);
                 inventory.potions.add(new ManaPotion(2));
                 inventory.potions.add(new HealthPotion(2));
                 break;
             case "Сайгакшы":
-                health=100;
+                max_health=100;
+                health=max_health;
                 attack=17;
                 defense=8;
-                stamina=8;
-                mana=8;
+                max_stamina =8;
+                stamina=max_stamina;
+                max_mana=8;
+                mana=max_mana;
                 inventory.weapons.add(Weapons.startbow);
                 inventory.armory.add(Armor.startsaygak);
                 inventory.potions.add(new ManaPotion(1));
