@@ -7,11 +7,11 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("Введите имя");
-        String name=sc.nextLine();
+        String namep=sc.nextLine();
         System.out.println("Выберите класс персонажа:");
-        System.out.println("1 — Батыр");
-        System.out.println("2 — Шаман");
-        System.out.println("3 — Сайгакшы");
+        System.out.println("1  Батыр");
+        System.out.println("2  Шаман");
+        System.out.println("3  Сайгакшы");
 
         int choice = 0;
         while (choice < 1 || choice > 3) {
@@ -32,9 +32,9 @@ public class Main {
             case 3 -> charClass = "Сайгакшы";
         }
         
-        Player player = new Player(name, charClass);
+        Player player = new Player(namep, charClass);
         System.out.println("Ваш Персонаж: " );
-        System.out.println("Имя: "+ name);
+        System.out.println("Имя: "+ player.namep);
         System.out.println("Класс: "+ player.charClass);
         System.out.println("Здоровье: "+player.health);
         System.out.println("Защита: "+player.defense);

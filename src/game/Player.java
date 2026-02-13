@@ -1,7 +1,7 @@
 package game;
 
 public class Player {
-    String name;
+    String namep;
     String charClass;
     int health;
     int attack;
@@ -9,8 +9,8 @@ public class Player {
     int mana;
     int stamina;
     Inventory inventory;
-    public Player(String name, String charClass){
-        this.name=name.trim();
+    public Player(String namep, String charClass){
+        this.namep=namep.trim();
         this.charClass=charClass.trim();
         this.inventory= new Inventory();
         switch(this.charClass){
