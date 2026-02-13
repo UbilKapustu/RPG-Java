@@ -16,6 +16,6 @@ public class Armor {
     public static Armor startsaygak= new Armor("Жилетка",2,0,"легкая броня");
     public static Armor startshaman= new Armor("Балахон",1,0,"плащ");
     public void showArmor(){
-        System.out.print(name + " Тип: "+ type+ " защита: "+ defense_add +" потеря стамины: "+ stamina_loss);
+        System.out.println(name + " Тип: "+ type+ "; защита: "+ defense_add +"; потеря стамины: "+ stamina_loss+";");
     }
 }
