@@ -1,5 +1,7 @@
 package game;
 
+import java.util.Scanner;
+
 public class Player {
     String namep;
     String charClass;
@@ -9,6 +11,21 @@ public class Player {
     int mana;
     int stamina;
     Inventory inventory;
+    public Weapons eqpdWeapons;
+    public Armor eqpdArmor;
+
+    public void eqpItem(){
+        Scanner cs= new Scanner(System.in);
+        if(!inventory.weapons.isEmpty()){
+            System.out.println("Выберите оружие");
+                for(int i=0;i<inventory.weapons.size();i++){
+                    
+                }
+            
+        }
+        
+    }
+
     public Player(String namep, String charClass){
         this.namep=namep.trim();
         this.charClass=charClass.trim();
@@ -50,8 +67,11 @@ public class Player {
                 break;
                 default:
         System.out.println("Такого класса нет!");
+        
+        
         }
-    
+        
+            
     }
 
 }
