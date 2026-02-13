@@ -22,6 +22,8 @@ public class Player {
                 mana=0;
                 inventory.weapons.add(Weapons.startsaber);
                 inventory.armory.add(Armor.startbatyr);
+                inventory.potions.add(new HealthPotion(2));
+                inventory.potions.add(new StaminaPotion(1));
                 break;
             case "Шаман":
                 health = 75;
@@ -31,6 +33,8 @@ public class Player {
                 mana=12;
                 inventory.weapons.add(Weapons.startstaff);
                 inventory.armory.add(Armor.startshaman);
+                inventory.potions.add(new ManaPotion(2));
+                inventory.potions.add(new HealthPotion(2));
                 break;
             case "Сайгакшы":
                 health=100;
@@ -40,6 +44,9 @@ public class Player {
                 mana=8;
                 inventory.weapons.add(Weapons.startbow);
                 inventory.armory.add(Armor.startsaygak);
+                inventory.potions.add(new ManaPotion(1));
+                inventory.potions.add(new HealthPotion(1));
+                inventory.potions.add(new StaminaPotion(1));
                 break;
                 default:
         System.out.println("Такого класса нет!");

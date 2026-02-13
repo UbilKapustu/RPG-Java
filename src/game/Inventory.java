@@ -20,6 +20,8 @@ public void showInv(){
         a.showArmor();
     }
     System.out.println("Зелья: ");
-
+    for (Potion p: potions){
+        p.showPotion();
+    }
 }
 }

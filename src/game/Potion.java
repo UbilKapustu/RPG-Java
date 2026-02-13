@@ -1,12 +1,18 @@
 package game;
 
-public class Potion {
-    int time_work;
-    int count;
-    public Potion(){}
-    public Potion(int time_work,int count){
+public abstract class Potion {
+    int count = 0;
 
+    public Potion() {
     }
-    void toDrink(){
+
+    public Potion(int count) {
+        this.count = count;
+    }
+
+    abstract void toDrink(Player player);
+
+    void showPotion() {
+        System.out.println(getClass().getSimpleName() + " | осталось: " + count);
     }
 }
