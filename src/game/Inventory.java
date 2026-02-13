@@ -2,7 +2,7 @@ package game;
 import java.util.ArrayList;
 
 public class Inventory {
-    ArrayList<String> weapons;
+    ArrayList<Weapons> weapons;
     ArrayList<String> armory;
     ArrayList<String> potions;
     public Inventory(){
@@ -11,7 +11,10 @@ public class Inventory {
         potions = new ArrayList<>();
     }
 public void showInv(){
-    System.out.println("Оружие: "+ weapons);
+    System.out.println("Оружие: ");
+    for( Weapons w : weapons){
+        w.showWeapon();
+    }
     System.out.println("Броня: "+ weapons);
     System.out.println("Зелья: "+ weapons);
 }

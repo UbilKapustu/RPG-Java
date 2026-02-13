@@ -20,6 +20,7 @@ public class Player {
                 defense=10;
                 stamina= 12;
                 mana=0;
+                inventory.weapons.add(Weapons.startsaber);
                 break;
             case "Шаман":
                 health = 75;
@@ -27,6 +28,7 @@ public class Player {
                 defense = 5;
                 stamina=2;
                 mana=12;
+                inventory.weapons.add(Weapons.startstaff);
                 break;
             case "Сайгакшы":
                 health=100;
@@ -34,6 +36,8 @@ public class Player {
                 defense=8;
                 stamina=8;
                 mana=8;
+                inventory.weapons.add(Weapons.startbow);
+                break;
         }
     
     }
