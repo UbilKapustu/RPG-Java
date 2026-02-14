@@ -67,8 +67,15 @@ public class Player {
         }
     }
     public void DamageTaken(int damage) {
-        if (isAlive && (health - damage) > 0){
+        if (!isAlive) return;
+
+        damage-=defense;
+
+        if(damage>0)
             health -= damage;
+        else damage=0;
+
+        if(health>0){
             System.out.println("Вы получили "+ damage +"урона. Ваше здоровье:"+health+"/"+max_health+"HP.");
         }
         else{
@@ -89,7 +96,7 @@ public class Player {
                 max_health=150;
                 health=max_health;
                 attack=15;
-                defense=10;
+                defense=3;
                 max_stamina = 12;
                 stamina=max_stamina;
                 max_mana=0;
@@ -102,8 +109,8 @@ public class Player {
             case "Шаман":
                 max_health = 75;
                 health=max_health;
-                attack= 20;
-                defense = 5;
+                attack= 24;
+                defense = 1;
                 max_stamina =2;
                 stamina=max_stamina;
                 max_mana=12;
@@ -116,8 +123,8 @@ public class Player {
             case "Сайгакшы":
                 max_health=100;
                 health=max_health;
-                attack=17;
-                defense=8;
+                attack=18;
+                defense=2;
                 max_stamina =8;
                 stamina=max_stamina;
                 max_mana=8;
