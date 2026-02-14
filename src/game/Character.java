@@ -95,5 +95,15 @@ public abstract class Character {
         this.max_stamina = max_stamina;
         this.stamina = max_stamina;
     }
-
+    public void getStatus(){
+        System.out.println("Ваш Персонаж: " );
+        System.out.println("Имя: "+ namep);
+        System.out.println("Класс: "+ charClass);
+        System.out.println("Здоровье: "+ max_health);
+        System.out.println("Защита: "+ defense);
+        System.out.println("Выносливость: "+ max_stamina);
+        System.out.println("Мана: "+max_mana);
+        System.out.println("\nИнвентарь");
+        inventory.showInv();
+    }
 }
