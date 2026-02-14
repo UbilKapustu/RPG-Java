@@ -53,10 +53,30 @@ public class Game {
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1 -> player.getStatus();
-                case 2 -> player.inventory.showInv();
-                case 3 -> location.showLocation();
-                case 0 -> player.isAlive=false;
+                case 1 :
+                    player.getStatus();
+                    break;
+                case 2 :
+                    player.inventory.showInv();
+                    break;
+                case 3 :
+                    location.showLocation();
+                    System.out.println("\n1 - Войти в локацию");
+                    System.out.println("0 - Выход");
+                    choice = sc.nextInt();
+                    switch (choice){
+                        case 1:
+                            location.enter();
+                            break;
+                        case 0:
+                            break;
+                    }
+                    break;
+                case 0 :
+                    player.isAlive=false;
+                    break;
+                default :
+                    System.out.println("Неверное значение!");
             }
         }
     }

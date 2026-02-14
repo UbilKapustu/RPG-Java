@@ -19,19 +19,18 @@ public class Location {
             " а дальше разберешься!",List.of(new Enemy("Ара","Мамбет")));
 
     public void enter() {
-        System.out.println("Вы вошли в:");
-        showLocation();
+        System.out.println("Вы вошли в "+ name);
 
         if (!cleared && hasEnemies()) {
             System.out.println("Здесь враги:");
             for (Enemy enemy : enemies) {
                 System.out.println("- " + enemy.namep);
             }
+
         } else {
             System.out.println("Локация зачищена.");
         }
     }
-
 
 
 
