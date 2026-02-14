@@ -15,8 +15,11 @@ public class Armor {
     public static Armor startbatyr= new Armor("Кожанные латты",3,0,"тяжелая броня");
     public static Armor startsaygak= new Armor("Жилетка",2,0,"легкая броня");
     public static Armor startshaman= new Armor("Балахон",1,0,"плащ");
+    public static Armor kozhankamambicha= new Armor("Кожанка мамбича",2,0,"легкая броня");
+    public static Armor shkuravolka= new Armor("Волчья шкура",4,0,"тяжелая броня");
+    public static Armor sherstsaygaka= new Armor("Шкура сайгака",3,0,"легкая броня");
     public void showArmor(){
         System.out.println(name);
-        System.out.println("Тип: "+ type+ "| защита: "+ defense_add +"| потеря стамины: "+ stamina_loss+"");
+        System.out.println("Тип: "+ type+ "| защита: "+ defense_add +"| потеря стамины: "+ stamina_loss);
     }
 }
