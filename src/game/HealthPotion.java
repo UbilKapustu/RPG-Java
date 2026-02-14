@@ -6,12 +6,10 @@ public class HealthPotion extends Potion{
     }
     void toDrink(Player player) {
         if (count <= 0) {
-            System.out.println("Зелье лечения закончилось");
+            System.out.println("Зелье лечения закончилось.");
             return;
         }
-        player.health += 20;
+        player.Heal(20);
         count--;
-        System.out.println("Вы восстановили 20 HP");
-        if(player.health> player.max_health)player.health=player.max_health;
     }
 }

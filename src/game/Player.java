@@ -14,6 +14,7 @@ public class Player {
     int max_stamina;
     int stamina;
     Inventory inventory;
+    boolean isAlive=true;
     public Weapons eqpdWeapons;
     public Armor eqpdArmor;
 
@@ -27,6 +28,51 @@ public class Player {
             
         }
         
+    }
+
+    public void Heal(int HP){
+        if(isAlive){
+            health+=HP;
+            System.out.println("Вы восстановили "+HP+" HP.");
+        }
+        else if (isAlive && health+HP > max_health){
+            health= max_health;
+            System.out.println("Вы восстановили HP до максимума.");
+        }
+    }
+    public void ManaRegen(int MP){
+        if(isAlive){
+            mana+=MP;
+            System.out.println("Вы восстановили "+MP+" MP.");
+        }
+        else if (isAlive && mana+MP > max_mana){
+            mana=max_mana;
+            System.out.println("Вы восстановили MP до максимума.");
+        }
+    }
+    public void StaminaRegen(int ST){
+        if(isAlive){
+            stamina+=ST;
+            System.out.println("Вы восстановили "+ST+" ST.");
+        }
+        else if (isAlive && stamina+ST > max_stamina){
+            stamina=max_stamina;
+            System.out.println("Вы восстановили ST до максимума.");
+        }
+    }
+
+    public void DamageTaken(int damage) {
+        if (isAlive && (health - damage) > 0){
+            health -= damage;
+            System.out.println("Вы получили "+ damage +"урона. Ваше здоровье:"+health+"/"+max_health+"HP.");
+        }
+        else{
+            Die();
+        }
+    }
+    public void Die(){
+        isAlive=false;
+        System.out.println("Вы умерли урон оказался фатальным!\n Игра окончена!");
     }
 
     public Player(String namep, String charClass){
@@ -79,8 +125,6 @@ public class Player {
                 break;
                 default:
         System.out.println("Такого класса нет!");
-        
-        
         }
         
             
