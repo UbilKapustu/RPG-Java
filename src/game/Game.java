@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Game {
     Player player;
+    Location location;
     Scanner sc = new Scanner(System.in);
 
     public void start() {
@@ -39,12 +40,14 @@ public class Game {
             case 3 -> charClass = "Сайгакшы";
         }
         player = new Player(namep, charClass);
+        location=Location.aul;
     }
 
     private void gameLoop(){
         while(player.isAlive){
             System.out.println("\n1 - Статус");
             System.out.println("2 - Инвентарь");
+            System.out.println("3 - Локация");
             System.out.println("0 - Выход");
 
             int choice = sc.nextInt();
@@ -52,6 +55,7 @@ public class Game {
             switch (choice) {
                 case 1 -> player.getStatus();
                 case 2 -> player.inventory.showInv();
+                case 3 -> location.showLocation();
                 case 0 -> player.isAlive=false;
             }
         }
