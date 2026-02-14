@@ -3,13 +3,12 @@ package game;
 import java.util.Scanner;
 
 public class Game {
-    boolean running = true;
     Player player;
     Scanner sc = new Scanner(System.in);
 
     public void start() {
         init();
-        //gameLoop();
+        gameLoop();
         shutdown();
     }
 
@@ -39,11 +38,29 @@ public class Game {
             case 2 -> charClass = "Шаман";
             case 3 -> charClass = "Сайгакшы";
         }
-        Player player = new Player(namep, charClass);
-        player.getStatus();
+        player = new Player(namep, charClass);
     }
 
-    public void shutdown(){
+    private void gameLoop(){
+        while(player.isAlive){
+            System.out.println("\n1 - Статус");
+            System.out.println("2 - Инвентарь");
+            System.out.println("0 - Выход");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1 -> player.getStatus();
+                case 2 -> player.inventory.showInv();
+                case 0 -> player.isAlive=false;
+            }
+        }
+    }
+
+
+    private void shutdown(){
         System.out.println("Игра завершена.");
     }
+
+
 }

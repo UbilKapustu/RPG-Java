@@ -83,7 +83,8 @@ public abstract class Character {
     }
     public void Die(){
         isAlive=false;
-        System.out.println("Вы умерли урон оказался фатальным!\n Игра окончена!");
+        System.out.println("Вы умерли урон оказался фатальным!");
+
     }
     public void setStats(int max_health, int attack, int defense, int max_mana, int max_stamina) {
         this.max_health = max_health;
@@ -104,6 +105,5 @@ public abstract class Character {
         System.out.println("Выносливость: "+ max_stamina);
         System.out.println("Мана: "+max_mana);
         System.out.println("\nИнвентарь");
-        inventory.showInv();
     }
 }
