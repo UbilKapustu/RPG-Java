@@ -75,7 +75,7 @@ public abstract class Character {
         else damage=0;
 
         if(health>0){
-            System.out.println("Вы получили "+ damage +"урона. Ваше здоровье:"+health+"/"+max_health+"HP.");
+            System.out.println(namep +" получил "+ damage +"урона. Здоровье "+ namep +": "+health+"/"+max_health+"HP.");
         }
         else{
             Die();
@@ -87,7 +87,7 @@ public abstract class Character {
     }
     public void Die(){
         isAlive=false;
-        System.out.println(namep + "умер урон оказался фатальным!");
+        System.out.println(namep + " умер урон оказался фатальным!");
 
     }
     public void setStats(int max_health, int attack, int defense, int max_mana, int max_stamina) {
@@ -129,5 +129,9 @@ public abstract class Character {
 
     public int getDefense() {
         return defense;
+    }
+
+    public int getMax_stamina() {
+        return max_stamina;
     }
 }

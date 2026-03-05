@@ -16,36 +16,55 @@ public class Fight {
     public void fight(){
         while(hasEnemies()&& player.isAlive) {
             int target = chooseTarget();
-            while (player.isAlive && enemies.get(target).isAlive) {
-                if (player.getStamina() > enemies.get(target).getStamina() && player.isAlive && enemies.get(target).isAlive) {
-                    enemies.get(target).DamageTaken(player.getAttack());
-                    player.StaminaLoss(player.inventory.weapons.getFirst().stamina_loss);
-                    System.out.println("Герой потерял выносливости:" + player.inventory.weapons.getFirst().stamina_loss);
-                    if(!enemies.get(target).isAlive) break;
-                    if (player.getStamina() > enemies.get(target).getStamina() && player.isAlive && enemies.get(target).isAlive) {
-                        enemies.get(target).DamageTaken(player.getAttack());
-                        player.StaminaLoss(player.inventory.weapons.getFirst().stamina_loss);
-                        System.out.println("Герой потерял выносливости:" + player.inventory.weapons.getFirst().stamina_loss);
-                        if(!enemies.get(target).isAlive) break;
-                        if (player.isAlive && enemies.get(target).isAlive) {
-                            player.DamageTaken(enemies.get(target).getAttack());
-                            if(!player.isAlive) break;
+            if (target == 0 ||target > enemies.size()) {
+                System.out.println("Вы покинули драку");
+                break;
+            }
+            else {
+                 target -= 1;
+                while (player.isAlive && enemies.get(target).isAlive) {
+                    if (player.getStamina() > enemies.get(target).getStamina()) {
+                        hitPlayer(target);
+                        if (!enemies.get(target).isAlive) {
+                            enemies.remove(target);
+                            break;
                         }
-                    } else{
-                        player.DamageTaken(enemies.get(target).getAttack());
-                        enemies.get(target).StaminaLoss(enemies.get(target).inventory.weapons.getFirst().stamina_loss);
-                        System.out.println("Враг потерял выносливости:" + enemies.get(target).inventory.weapons.getFirst().stamina_loss);
-                        if(!player.isAlive) break;}
-                } else{
-                    player.DamageTaken(enemies.get(target).getAttack());
-                    enemies.get(target).StaminaLoss(enemies.get(target).inventory.weapons.getFirst().stamina_loss);
-                    System.out.println("Враг потерял выносливости:" + enemies.get(target).inventory.weapons.getFirst().stamina_loss);
-                    if(!player.isAlive) break;}
+                        if (player.getStamina() > enemies.get(target).getStamina()) {
+                            hitPlayer(target);
+                            if (!enemies.get(target).isAlive){
+                                enemies.remove(target);
+                                break;
+                            }
+                            hitEnemy(target);
+                        } else {
+                            hitEnemy(target);
+                            if (!player.isAlive) break;
+                        }
+                    } else {
+                        hitEnemy(target);
+                        if (!player.isAlive) break;
+                    }
+                }
+                player.StaminaRegen(player.getMax_stamina());
             }
         }
     }
 
+    public void hitPlayer(int target){
+        enemies.get(target).DamageTaken(player.getAttack());
+        player.StaminaLoss(player.inventory.weapons.getFirst().stamina_loss);
+        System.out.println("Герой потерял выносливости:" + player.inventory.weapons.getFirst().stamina_loss);
+    }
+
+    public void hitEnemy(int target){
+        player.DamageTaken(enemies.get(target).getAttack());
+        enemies.get(target).StaminaLoss(enemies.get(target).inventory.weapons.getFirst().stamina_loss);
+        System.out.println("Враг потерял выносливости:" + enemies.get(target).inventory.weapons.getFirst().stamina_loss);
+    }
+
+
     public int chooseTarget(){
+        System.out.println("Выберите цель:");
         for (int i=0; i<enemies.size();i++)
             System.out.println("- "+ (i+1) +" "+ enemies.get(i).namep);
         System.out.println("- 0 Выйти из драки");

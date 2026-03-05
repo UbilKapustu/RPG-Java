@@ -1,5 +1,6 @@
 package game;
 import java.util.List;
+import java.util.ArrayList;
 
 public class Location {
     private String name;
@@ -14,7 +15,12 @@ public class Location {
 
     public static Location aul= new Location("Стартовый аул","Здесь собрались такие же салаги" +
             " как и ты, тебе придется впервые сразиться с мамбичем, и постоять за свою шкуру" +
-            " а дальше разберешься!",List.of(new Enemy("Ара","Мамбет")));
+            " а дальше разберешься!", new ArrayList<>(
+            List.of(
+                    new Enemy("Ара","Мамбет"),
+                    new Enemy("Оро","Мамбет")
+            )
+    ));
 
     public void enter() {
         System.out.println("Вы вошли в "+ name);
