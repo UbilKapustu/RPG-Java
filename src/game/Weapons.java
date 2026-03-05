@@ -2,11 +2,11 @@ package game;
 
 public class Weapons {
 
-    String name;
-    int attack_add;
-    int mana_loss;
+    private String name;
+    private int attack_add;
+    private int mana_loss;
     int stamina_loss;
-    String type;
+    private String type;
 
     public Weapons(String name, int attack_add, int mana_loss, int stamina_loss, String type) {
         this.name = name;

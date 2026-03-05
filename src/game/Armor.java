@@ -1,10 +1,10 @@
 package game;
 
 public class Armor {
-    String name;
-    int defense_add;
-    int stamina_loss;
-    String type;
+    private String name;
+    private int defense_add;
+    private int stamina_loss;
+    private String type;
 
     public Armor(String name, int defense_add, int stamina_loss, String type) {
         this.name = name;

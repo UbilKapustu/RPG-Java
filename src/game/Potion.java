@@ -1,7 +1,7 @@
 package game;
 
 public abstract class Potion {
-    int count = 0;
+    protected int count = 0;
 
     public Potion() {
     }

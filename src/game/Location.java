@@ -2,16 +2,14 @@ package game;
 import java.util.List;
 
 public class Location {
-    String name;
-    String about;
-    List<Enemy> enemies;
-    boolean cleared;
+    private String name;
+    private String about;
+     List<Enemy> enemies;
 
     public Location(String name, String about, List<Enemy> enemies) {
         this.name = name;
         this.about = about;
         this.enemies =enemies;
-        this.cleared = false;
     }
 
     public static Location aul= new Location("Стартовый аул","Здесь собрались такие же салаги" +
@@ -21,7 +19,7 @@ public class Location {
     public void enter() {
         System.out.println("Вы вошли в "+ name);
 
-        if (!cleared && hasEnemies()) {
+        if (hasEnemies()) {
             System.out.println("Здесь враги:");
             for (Enemy enemy : enemies) {
                 System.out.println("- " + enemy.namep);
@@ -43,6 +41,6 @@ public class Location {
     }
 
     public void showLocation(){
-        System.out.println(name + "\nОписание: "+about+"\nЗачищена: "+cleared);
+        System.out.println(name + "\nОписание: "+about+"\nЗачищена: "+hasEnemies());
     }
 }

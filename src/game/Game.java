@@ -1,5 +1,6 @@
 package game;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -67,6 +68,10 @@ public class Game {
                     switch (choice){
                         case 1:
                             location.enter();
+                            if(location.hasEnemies()){
+                                Fight fight= new Fight(player, location.enemies);
+                                fight.fight();
+                            }
                             break;
                         case 0:
                             break;

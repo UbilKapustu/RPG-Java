@@ -1,18 +1,18 @@
 package game;
 
 public abstract class Character {
-    String namep;
-    String charClass;
-    int max_health;
-    int health;
-    int attack;
-    int defense;
-    int max_mana;
-    int mana;
-    int max_stamina;
-    int stamina;
-    Inventory inventory;
-    boolean isAlive=true;
+    protected String namep;
+    protected String charClass;
+    protected int max_health;
+    protected int health;
+    protected int attack;
+    protected int defense;
+    protected int max_mana;
+    protected int mana;
+    protected int max_stamina;
+    protected int stamina;
+     Inventory inventory;
+     boolean isAlive=true;
     public Character(){}
 //    public Weapons eqpdWeapons;
 //    public Armor eqpdArmor;
@@ -81,9 +81,13 @@ public abstract class Character {
             Die();
         }
     }
+    public void StaminaLoss(int stamina){
+        this.stamina-=stamina;
+        if(this.stamina<0) this.stamina=0;
+    }
     public void Die(){
         isAlive=false;
-        System.out.println("Вы умерли урон оказался фатальным!");
+        System.out.println(namep + "умер урон оказался фатальным!");
 
     }
     public void setStats(int max_health, int attack, int defense, int max_mana, int max_stamina) {
@@ -105,5 +109,25 @@ public abstract class Character {
         System.out.println("Выносливость: "+ max_stamina);
         System.out.println("Мана: "+max_mana);
         System.out.println("\nИнвентарь");
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getStamina() {
+        return stamina;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
     }
 }
