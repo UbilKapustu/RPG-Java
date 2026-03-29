@@ -8,7 +8,8 @@ public class Enemy extends Character {
         this.inventory = new Inventory();
         switch (this.charClass) {
             case "Мамбет":
-                setStats(25, 5, 1, 0, 5);
+                setStats(40
+                        , 5, 1, 0, 5);
                 inventory.weapons.add(Weapons.mambetsstick);
                 inventory.armory.add(Armor.kozhankamambicha);
                 break;

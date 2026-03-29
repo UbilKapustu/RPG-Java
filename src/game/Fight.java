@@ -12,7 +12,7 @@ public class Fight {
         this.player=player;
         this.enemies=enemies;
     }
-//Если стамина выше у нас бьем мы, если равна или меньше бьет враг, но подряд каждый может ударить только дважды.
+//Если стамина выше у нас бьем мы, если равна или меньше бьет враг, но подряд мы  можем ударить только два раза потому что у нас стамины почти всегда больше.
     public void fight(){
         while(hasEnemies()&& player.isAlive) {
             int target = chooseTarget();

@@ -104,10 +104,10 @@ public abstract class Character {
         System.out.println("Ваш Персонаж: " );
         System.out.println("Имя: "+ namep);
         System.out.println("Класс: "+ charClass);
-        System.out.println("Здоровье: "+ max_health);
+        System.out.println("Здоровье: "+health+"/"+max_health);
         System.out.println("Защита: "+ defense);
-        System.out.println("Выносливость: "+ max_stamina);
-        System.out.println("Мана: "+max_mana);
+        System.out.println("Выносливость: "+stamina +"/"+max_stamina);
+        System.out.println("Мана: "+ mana+"/"+max_mana);
         System.out.println("\nИнвентарь");
     }
 
